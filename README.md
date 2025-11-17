@@ -39,10 +39,10 @@ terraform -v
 
 **Project Structure**
 .
-├── provider.tf :configures Terraform + Kubernetes provider
-├── variables.tf :contains kubeconfig path, context, and app settings
-├── main.tf      :namespace, deployment, and service
-└── outputs.tf   :Prints namespace, service name, port-forward command
+├── provider.tf — Configures Terraform and the Kubernetes provider
+├── variables.tf — Contains kubeconfig path, context, and app variables
+├── main.tf — Defines namespace, deployment, and service
+└── outputs.tf — Prints namespace, service name, and port-forward command
 
 
 ## Step 1 — Create a local Kubernetes cluster with kind
