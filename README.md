@@ -15,13 +15,7 @@ Using Terraform, this project:
 
 **High-level architecture:**
 
-+-----------+      +-------------------------+      +---------------------+      +-----------+  
-| Terraform |  --> | Kubernetes (kind cluster) |--> | Deployment (2 pods) |  --> | Service   |  
-+-----------+      +-------------------------+      +---------------------+      +-----------+ 
-
-    +-------------------------+
---> | Browser (localhost:8080)|
-    +-------------------------+
+<img width="867" height="281" alt="image" src="https://github.com/user-attachments/assets/e7def243-99df-4fdb-8387-f26ada667dda" />
 
 
 ## Tools & Prerequisites
@@ -42,12 +36,13 @@ terraform -v
 ```
 
 **Project Structure**
+```
 .
 ├── provider.tf — Configures Terraform and the Kubernetes provider
 ├── variables.tf — Contains kubeconfig path, context, and app variables
 ├── main.tf — Defines namespace, deployment, and service
 └── outputs.tf — Prints namespace, service name, and port-forward command
-
+```
 
 ## Step 1 — Create a local Kubernetes cluster with kind
 
