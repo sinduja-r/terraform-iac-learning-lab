@@ -59,13 +59,15 @@ Inside the project directory:
 terraform init
 terraform apply
 ```
+Plan : 3 to add, 0 to change, 0 to destroy.
 
 Terraform will:
  - Create namespace
  - Deploy two pods
  - Expose it through a service
-   
 Approve the plan when prompted 
+
+<img width="1480" height="186" alt="image" src="https://github.com/user-attachments/assets/7a474851-38ff-4e3a-aae3-9d525afe01cb" />
 
 
 ## Step 3 — Verify the Deployment in Kubernetes
