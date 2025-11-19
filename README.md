@@ -4,7 +4,7 @@ This repository showcases a small, hands-on learning project where I used **Terr
 The purpose of this project is to deepen my understanding of how **Infrastructure as Code (IaC)** applies to Kubernetes,and how Terraform can automate resource creation without relying on YAML or manual commands.
 
 
-## Overview
+### Overview
 
 Using Terraform, this project:
 - Connects to a **local Kubernetes cluster** created with **kind**
@@ -18,7 +18,7 @@ Using Terraform, this project:
 <img width="867" height="281" alt="image" src="https://github.com/user-attachments/assets/e7def243-99df-4fdb-8387-f26ada667dda" />
 
 
-## Tools & Prerequisites
+### Tools & Prerequisites
 
 - **Terraform**    : Manages Kubernetes resources using IaC
 - **Kubernetes**   : Container orchestration platform
@@ -44,7 +44,7 @@ terraform -v
 └── outputs.tf — Prints namespace, service name, and port-forward command
 ```
 
-## Step 1 — Create a local Kubernetes cluster with kind
+#### Step 1 — Create a local Kubernetes cluster with kind
 
 Run the following command to create a kind-based Kubernetes cluster:
 ```bash
@@ -52,7 +52,7 @@ kind create cluster --name terraform-k8-demo
 ```
 
 
-## Step 2 — Initialize & Apply Terraform
+#### Step 2 — Initialize & Apply Terraform
 
 Inside the project directory:
 ```bash
@@ -70,7 +70,7 @@ Approve the plan when prompted
 <img width="1480" height="186" alt="image" src="https://github.com/user-attachments/assets/7a474851-38ff-4e3a-aae3-9d525afe01cb" />
 
 
-## Step 3 — Verify the Deployment in Kubernetes
+#### Step 3 — Verify the Deployment in Kubernetes
 
 Check that the resources were created successfully:
 ```bash
@@ -83,7 +83,7 @@ Expected:
 <img width="1175" height="185" alt="image" src="https://github.com/user-attachments/assets/1b54cfcf-61db-45e5-af73-4278dce57254" />
 
 
-## Step 4 — Access the Application
+#### Step 4 — Access the Application
 
 Use port-forwarding:
 ``` bash
@@ -107,7 +107,7 @@ kind delete cluster --name terraform-k8-demo
 ```
 
 
-## Learning Reflections
+### Learning Reflections
 
 Through this project, I gained hands-on experience with:
   - Using Terraform as an IaC approach to manage Kubernetes objects  
@@ -121,12 +121,12 @@ Through this project, I gained hands-on experience with:
  # CI/CD: Terraform GitHub Actions Pipeline
 
 
-## Objective
+### Objective
 
 To automate basic Terraform checks using GitHub Actions and ensure every change to the repository is validated consistently. This workflow helps maintain clean, formatted, and syntactically correct Terraform code before any deployment.
 
 
-### Pipeline Stages
+#### Pipeline Stages
 
 The GitHub Actions workflow performs the following automated steps on every push and pull request:
 
@@ -153,18 +153,16 @@ The GitHub Actions workflow performs the following automated steps on every push
 
 
 
-## Pipeline Output
+### Pipeline Output
 
 After each workflow run, GitHub Actions provides:
 
 - **A full log** of all Terraform commands  
 - **A downloadable `tf_plan` artifact**  
 - **Pass/Fail status** for the CI checks  
-- Clear visibility into code quality and configuration health
+
+![Terraform CI](https://github.com/sinduja-r/terraform-iac-learning-lab/actions/workflows/terraform-ci.yml/badge.svg)
 
 <img width="1384" height="580" alt="image" src="https://github.com/user-attachments/assets/f7812cf5-8145-4826-a0f2-c6bbe4cd307d" />
 <img width="1375" height="138" alt="image" src="https://github.com/user-attachments/assets/36bd634d-ae33-465f-9234-3729ef920c17" />
 <img width="1369" height="326" alt="image" src="https://github.com/user-attachments/assets/dcd41f84-cee2-4bfa-8f07-8e2bc53f2a98" />
-
-
-![Terraform CI](https://github.com/sinduja-r/terraform-iac-learning-lab/actions/workflows/terraform-ci.yml/badge.svg)
