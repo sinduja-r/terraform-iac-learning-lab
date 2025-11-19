@@ -113,7 +113,58 @@ Through this project, I gained hands-on experience with:
   - Using Terraform as an IaC approach to manage Kubernetes objects  
   - Setting up a lightweight Kubernetes environment using kind  
   - Understanding how Deployments, Services, and namespaces work together  
-  - Automating resource creation instead of relying on manual YAML manifests  
+  - Automating resource creation instead of relying on manual YAML manifests
+    
 
- 
+ ---
 
+ # CI/CD: Terraform GitHub Actions Pipeline
+
+
+## Objective
+
+To automate basic Terraform checks using GitHub Actions and ensure every change to the repository is validated consistently. This workflow helps maintain clean, formatted, and syntactically correct Terraform code before any deployment.
+
+
+### Pipeline Stages
+
+The GitHub Actions workflow performs the following automated steps on every push and pull request:
+
+1. **Checks out the repository**  
+   Ensures the workflow runs against the latest code.
+
+2. **Sets up Terraform**  
+   Installs the correct Terraform version inside the GitHub Actions runner.
+
+3. **Checks code formatting (`terraform fmt -check`)**  
+   Confirms that all Terraform files follow a consistent style.
+
+4. **Initializes Terraform (`terraform init`)**  
+   Runs initialization without requiring a remote backend.
+
+5. **Validates the configuration (`terraform validate`)**  
+   Ensures syntax correctness and catches structural issues early.
+
+6. **Generates a Terraform execution plan (`terraform plan`)**  
+   Produces a plan to show what Terraform intends to create or modify.
+
+7. **Uploads the plan as an artifact**  
+   Makes the `tf_plan` file available for download and review directly from GitHub Actions.
+
+
+
+## Pipeline Output
+
+After each workflow run, GitHub Actions provides:
+
+- **A full log** of all Terraform commands  
+- **A downloadable `tf_plan` artifact**  
+- **Pass/Fail status** for the CI checks  
+- Clear visibility into code quality and configuration health
+
+<img width="1384" height="580" alt="image" src="https://github.com/user-attachments/assets/f7812cf5-8145-4826-a0f2-c6bbe4cd307d" />
+<img width="1375" height="138" alt="image" src="https://github.com/user-attachments/assets/36bd634d-ae33-465f-9234-3729ef920c17" />
+<img width="1369" height="326" alt="image" src="https://github.com/user-attachments/assets/dcd41f84-cee2-4bfa-8f07-8e2bc53f2a98" />
+
+
+![Terraform CI](https://github.com/sinduja-r/terraform-iac-learning-lab/actions/workflows/terraform-ci.yml/badge.svg)
