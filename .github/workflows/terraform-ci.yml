@@ -25,3 +25,12 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
+
+      - name: Save Terraform Plan
+        run: terraform plan -out=tf_plan -input=false
+
+      - name: Upload Plan Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plan
+          path: tf_plan
