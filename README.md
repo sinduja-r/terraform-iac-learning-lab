@@ -116,7 +116,10 @@ Through this project, I gained hands-on experience with:
   - Automating resource creation instead of relying on manual YAML manifests
     
 
+
  ---
+
+ 
 
  # CI/CD: Terraform GitHub Actions Pipeline
 
@@ -126,7 +129,7 @@ Through this project, I gained hands-on experience with:
 To automate basic Terraform checks using GitHub Actions and ensure every change to the repository is validated consistently. This workflow helps maintain clean, formatted, and syntactically correct Terraform code before any deployment.
 
 
-#### Pipeline Stages
+### Pipeline Stages
 
 The GitHub Actions workflow performs the following automated steps on every push and pull request:
 
